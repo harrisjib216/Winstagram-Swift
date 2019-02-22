@@ -19,55 +19,53 @@ class HomeTableViewCell: UITableViewCell {
     var pressed:Bool = false
     var postID:String!
     
-    
-    // something
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    
-    // if cell is selected
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
-    
+        
     // render each cell
     func render(data: Array<Any>) {
-        // post set up
-        self.postID = data[1] as! String
-        
-        // text
-        self.nameLabel.text = data[2] as! String
-        self.dateLabel.text = data[3] as! String
+        // text - post set up
+        self.postID = data[0] as! String
+        self.nameLabel.text = data[2] as? String
+        self.dateLabel.text = data[3] as? String
         self.winsLabel.text = "\(data[5])"
-        self.content.text = data[6] as! String
+        self.content.text = data[6] as? String
         
-        // images
-        /*
-          self.postID,
-        self.profile,
-          self.author,
-          self.date,
-        self.post,
-          self.wins,
-          self.desc
-        */
+        
+        // profile - post pic
+        let url0 = URL(string: data[1] as! String)!
+        let url1 = URL(string: data[4] as! String)!
+        
+        DispatchQueue.global().async {
+            let img0 = try? Data(contentsOf: url0)
+            let img1 = try? Data(contentsOf: url1)
+
+            DispatchQueue.main.async {
+                self.profilePic.image = UIImage(data: img0!)
+                self.profilePic.border(img: self.profilePic)
+                
+                self.postImg.image = UIImage(data: img1!)
+            }
+        }
     }
     
     
     // pressing wins button
     @IBAction func winBtn(_ sender: Any) {
-        /*
-        let wins:Int = Database.database().reference().child("posts/\(self.postID)").value(forKey: "wins") as! Int
-        pressed = true
-        if (pressed == true) {
-            Database.database().reference().child("posts/\(self.postID)/wins").setValue((wins + 1))
-            self.winsLabel.text = "\(wins + 1)"
-        }
-        else {
-            Database.database().reference().child("posts/\(self.postID)/wins").setValue((wins - 1))
-            self.winsLabel.text = "\(wins - 1)"
-        }*/
+        let ref = Database.database().reference().child("posts/\(self.postID!)/wins")
+        pressed = !pressed
+
+        ref.observeSingleEvent(of: .value, with: { (snap) in
+            let wins = snap.value as! Int
+            
+            if (self.pressed) {
+                ref.setValue(wins + 1)
+                self.winsLabel.text = "\(wins + 1)"
+                self.winsLabel.textColor = UIColor(hex: 0x2E7D32)
+            }
+            else {
+                ref.setValue(wins - 1)
+                self.winsLabel.text = "\(wins - 1)"
+                self.winsLabel.textColor = .red
+            }
+        })
     }
 }

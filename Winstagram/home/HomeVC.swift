@@ -6,7 +6,6 @@
 //  Copyright © 2019 objcmate. All rights reserved.
 //
 import UIKit
-import NVActivityIndicatorView
 import FirebaseDatabase
 import FirebaseAuth
 
@@ -83,10 +82,3 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(view, animated: true, completion: nil)
     }
 }
-
-
-
-// var loadingView: NVActivityIndicatorView!
-// loadingView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), type: .lineScaleParty, color: UIColor.red)
-// loadingView.startAnimating()
-// self.loadingView.stopAnimating()
