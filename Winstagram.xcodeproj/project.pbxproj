@@ -106,10 +106,10 @@
 		2F64D8102207868900BEAE94 /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				2FD59616221EC37A00C00A81 /* SignInVC.swift */,
 				2F64D8002207863B00BEAE94 /* WelcomeVC.swift */,
 				2F64D8152207998D00BEAE94 /* EmailVC.swift */,
 				2F8E0205221B888700A3E5E8 /* PhoneVC.swift */,
-				2FD59616221EC37A00C00A81 /* SignInVC.swift */,
 			);
 			path = auth;
 			sourceTree = "<group>";

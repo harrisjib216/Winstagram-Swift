@@ -431,6 +431,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="9fi-a1-qcm"/>
                                                         <constraint firstAttribute="height" constant="30" id="zKe-KK-mGq"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <state key="normal" title="win"/>
                                                     <connections>
                                                         <action selector="winBtn:" destination="bD1-Ns-6qd" eventType="touchUpInside" id="a7Y-Jr-IIs"/>
