@@ -16,16 +16,11 @@ class SignInViewController: UIViewController {
     let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     
     
-    // style the buttons
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        signin.newRadius(button: signin, radius: 10)
-    }
-    
     
     // when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        signin.newRadius(button: signin, radius: 10)
     }
     
     
@@ -54,14 +49,15 @@ class SignInViewController: UIViewController {
                 self.present(self.alert, animated: true, completion: nil)
             }
             else {
-                self.handleNav(view: HomeViewController())
+                self.handleNav(view: "HomeVC")
             }
         }
     }
     
     
     // nav to new screen
-    func handleNav(view: UIViewController) {
-        self.present(view, animated: true, completion: nil)
+    func handleNav(view: String) {
+        let home = self.storyboard?.instantiateViewController(withIdentifier: view)
+        self.present(home!, animated: false, completion: nil)
     }
 }

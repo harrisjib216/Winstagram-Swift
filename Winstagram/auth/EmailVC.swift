@@ -18,16 +18,11 @@ class EmailViewController: UIViewController {
     let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     
     
-    // view will load
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        signup.newRadius(button: signup, radius: 10)
-    }
-    
     
     // view loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        signup.newRadius(button: signup, radius: 10)
     }
     
     
@@ -58,14 +53,15 @@ class EmailViewController: UIViewController {
             else {
                 let user = (authResult?.user.uid)!
                 Database.database().reference().child("users").child(user).setValue(["name": name])
-                self.handleNav(view: HomeViewController())
+                self.handleNav(view: "HomeVC")
             }
         }
     }
     
     
     // nav to new screen
-    func handleNav(view: UIViewController) {
-        self.present(view, animated: true, completion: nil)
+    func handleNav(view: String) {
+        let home = self.storyboard?.instantiateViewController(withIdentifier: view)
+        self.present(home!, animated: false, completion: nil)
     }
 }

@@ -18,8 +18,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // view loads - init table
     override func viewDidLoad() {
         super.viewDidLoad()
+        posts = []
         self.homeTable.delegate = self
         self.homeTable.dataSource = self
+        self.homeTable.reloadData()
         loadData()
     }
     
@@ -67,7 +69,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         do {
             try Auth.auth().signOut()
-            self.handleNav(view: WelcomeViewController())
+            self.handleNav(view: "WelcomeVC")
         } catch let err as NSError {
             alert.title = "Uh oh!"
             alert.message = "\(err.localizedDescription)"
@@ -78,7 +80,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     // nav to new screen
-    func handleNav(view: UIViewController) {
-        self.present(view, animated: true, completion: nil)
+    func handleNav(view: String) {
+        self.posts = []
+        let home = self.storyboard?.instantiateViewController(withIdentifier: view)
+        self.present(home!, animated: false, completion: nil)
     }
 }

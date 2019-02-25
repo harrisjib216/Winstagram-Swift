@@ -13,17 +13,12 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var facebookOutlet: UIButton!
     
     
-    // view will load
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        emailOutlet.newRadius(button: emailOutlet, radius: 10)
-        phoneOutlet.newRadius(button: phoneOutlet, radius: 10)
-        facebookOutlet.newRadius(button: facebookOutlet, radius: 10)
-    }
-
     
     // view loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailOutlet.newRadius(button: emailOutlet, radius: 10)
+        phoneOutlet.newRadius(button: phoneOutlet, radius: 10)
+        facebookOutlet.newRadius(button: facebookOutlet, radius: 10)
     }
 }

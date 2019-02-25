@@ -23,7 +23,7 @@ class HomeTableViewCell: UITableViewCell {
     // render each cell
     func render(data: Array<Any>) {
         // text - post set up
-        self.postID = data[0] as! String
+        self.postID = data[0] as? String
         self.nameLabel.text = data[2] as? String
         self.dateLabel.text = data[3] as? String
         self.winsLabel.text = "\(data[5])"
@@ -41,7 +41,6 @@ class HomeTableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.profilePic.image = UIImage(data: img0!)
                 self.profilePic.border(img: self.profilePic)
-                
                 self.postImg.image = UIImage(data: img1!)
             }
         }

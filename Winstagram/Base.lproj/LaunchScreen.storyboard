@@ -30,32 +30,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="developed by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cA-Pa-dLl">
-                                <rect key="frame" x="15" y="550.5" width="126" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jibril Harris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeN-kv-QJz">
-                                <rect key="frame" x="112.5" y="592" width="150" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="3xL-IF-hI2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="developed by Jibril Harris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cA-Pa-dLl">
+                                <rect key="frame" x="85" y="595.5" width="205" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2cA-Pa-dLl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Iq-sp-VQu"/>
                             <constraint firstItem="gF7-y0-QbG" firstAttribute="top" secondItem="80J-8J-QoM" secondAttribute="bottom" constant="25" id="Rxp-mk-YVM"/>
                             <constraint firstItem="80J-8J-QoM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="UQh-Pl-QU2"/>
                             <constraint firstItem="80J-8J-QoM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WSM-KE-WRq"/>
-                            <constraint firstItem="qeN-kv-QJz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bKE-yT-7IG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qeN-kv-QJz" secondAttribute="bottom" constant="20" id="bPQ-Hk-FbJ"/>
                             <constraint firstItem="gF7-y0-QbG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="h7F-HO-O9D"/>
-                            <constraint firstItem="2cA-Pa-dLl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="okf-wE-MtP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2cA-Pa-dLl" secondAttribute="bottom" constant="90" id="rXf-wf-thF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2cA-Pa-dLl" secondAttribute="bottom" constant="50" id="rXf-wf-thF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

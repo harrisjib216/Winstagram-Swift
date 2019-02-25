@@ -17,16 +17,11 @@ class PhoneViewController: UIViewController {
     let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
 
     
-    // view will load
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        send.newRadius(button: send, radius: 10)
-    }
-    
     
     // view loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        send.newRadius(button: send, radius: 10)
     }
     
     
@@ -55,7 +50,7 @@ class PhoneViewController: UIViewController {
                 self.alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             }
             else {
-                self.handleNav(view: HomeViewController())
+                self.handleNav(view: "HomeVC")
                 print("id: " + verificationID!)
             }
         }
@@ -63,7 +58,8 @@ class PhoneViewController: UIViewController {
     
     
     // nav to new screen
-    func handleNav(view: UIViewController) {
-        self.present(view, animated: true, completion: nil)
+    func handleNav(view: String) {
+        let home = self.storyboard?.instantiateViewController(withIdentifier: view)
+        self.present(home!, animated: false, completion: nil)
     }
 }
