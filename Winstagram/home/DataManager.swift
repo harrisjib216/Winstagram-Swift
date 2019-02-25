@@ -30,6 +30,7 @@ final class DataManager {
     // get posts
     func fetchPosts(completion: @escaping (_ result: Array<Any>)->()) {
         self.databaseRef.child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+            self.Home.posts.removeAll()
             let dict = snapshot.value as! [String: [String: AnyObject]]
             for snap in dict {
                 self.Home.setPosts(post: (PostModel(postID: snap.key, dict: snap.value).get()))
